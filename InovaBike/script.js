@@ -29,7 +29,7 @@ const bikes = [
 const plans = [
   {
     nome: '🥉 Plano Bronze',
-    preco: 'R$ 199',
+    preco: 'R$ 49,99',
     periodo: '/semana',
     adesao: 'R$ 99',
     desc: 'Ideal para quem quer começar com economia e praticidade no dia a dia.',
@@ -46,7 +46,7 @@ const plans = [
   },
   {
     nome: '🥈 Plano Prata',
-    preco: 'R$ 299',
+    preco: 'R$ 74,99',
     periodo: '/semana',
     adesao: 'R$ 149',
     desc: 'Mais liberdade, benefícios e suporte para quem utiliza a bike com frequência.',
@@ -67,7 +67,7 @@ const plans = [
   },
   {
     nome: '🥇 Plano Ouro',
-    preco: 'R$ 399',
+    preco: 'R$ 99,99',
     periodo: '/semana',
     adesao: 'R$ 199',
     desc: 'O plano completo para máxima segurança, performance e benefícios exclusivos.',
@@ -176,9 +176,9 @@ function simularFinanciamento() {
 }
 
 function updateQR() {
-  const link = location.href.split('#')[0];
+  const link = 'https://inovabike.netlify.app/';
   document.getElementById('appLink').textContent = link;
-  document.getElementById('qrImg').src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(link)}`;
+  document.getElementById('qrImg').src = 'IMG/qrcode.png';
 }
 
 async function copiarLink() {
