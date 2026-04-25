@@ -477,6 +477,17 @@
       color: var(--green);
     }
 
+    .plan .adesao {
+      margin-top: -5px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    .plan .adesao b {
+      color: var(--text);
+    }
+
     @media (min-width: 850px) {
       body {
         align-items: center;

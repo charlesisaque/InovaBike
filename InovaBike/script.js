@@ -27,9 +27,68 @@ const bikes = [
 ];
 
 const plans = [
-  { nome: 'Plano Delivery', preco: 'R$ 89', periodo: '/semana', desc: 'Feito para entregadores e profissionais da rua.', itens: ['Manutenção inclusa', 'Suporte 24h', 'Seguro opcional'] },
-  { nome: 'Plano Assinatura', preco: 'R$ 129', periodo: '/mês', desc: 'Mais liberdade para o dia a dia.', itens: ['Manutenção inclusa', 'Bateria removível', 'Cancelamento flexível'] },
-  { nome: 'Plano Mensal', preco: 'R$ 159', periodo: '/mês', desc: 'Flexível e sem burocracia.', itens: ['Retirada em base parceira', 'Suporte 24h', 'Proteção contra roubo'] }
+  {
+    nome: '🥉 Plano Bronze',
+    preco: 'R$ 199',
+    periodo: '/semana',
+    adesao: 'R$ 99',
+    desc: 'Ideal para quem quer começar com economia e praticidade no dia a dia.',
+    itens: [
+      'Bike elétrica inclusa',
+      'Suporte técnico básico',
+      'Reboque 24h',
+      'Clube de vantagens básico',
+      'Orientação inicial de uso e segurança',
+      'Retirada em base parceira',
+      'Assistência em caso de problemas mecânicos',
+      'Acesso a capacitações básicas'
+    ]
+  },
+  {
+    nome: '🥈 Plano Prata',
+    preco: 'R$ 299',
+    periodo: '/semana',
+    adesao: 'R$ 149',
+    desc: 'Mais liberdade, benefícios e suporte para quem utiliza a bike com frequência.',
+    itens: [
+      'Bike elétrica inclusa',
+      'Bateria removível',
+      'Suporte técnico prioritário',
+      'Reboque 24h incluso',
+      'Clube de vantagens premium',
+      'Capa de chuva exclusiva',
+      'Capacitação profissional',
+      'Suporte psicológico',
+      'Orientação jurídica',
+      'Suporte contábil',
+      'Cancelamento flexível',
+      'Descontos em parceiros e oficinas'
+    ]
+  },
+  {
+    nome: '🥇 Plano Ouro',
+    preco: 'R$ 399',
+    periodo: '/semana',
+    adesao: 'R$ 199',
+    desc: 'O plano completo para máxima segurança, performance e benefícios exclusivos.',
+    itens: [
+      'Bike elétrica premium inclusa',
+      'Proteção contra roubo e furto',
+      'Suporte VIP 24h',
+      'Reboque prioritário',
+      'Clube de vantagens exclusivo + cashback',
+      'Capa de chuva premium',
+      'Capacitação profissional avançada',
+      'Suporte psicológico premium',
+      'Orientação jurídica completa',
+      'Suporte contábil prioritário',
+      'Atendimento técnico VIP',
+      'Bateria removível',
+      'Assistência emergencial prioritária',
+      'Renovação com benefícios exclusivos',
+      'Atendimento empresarial e corporativo'
+    ]
+  }
 ];
 
 let selectedBike = 0;
@@ -91,10 +150,10 @@ function applyBike() {
 function renderPlans() {
   document.getElementById('plansList').innerHTML = plans.map(p => `
         <div class="plan">
-          <img src="${bikeImg}" alt="Bike elétrica">
           <h2>${p.nome}</h2>
           <p>${p.desc}</p>
           <div class="price">${p.preco} <small>${p.periodo}</small></div>
+          <div class="adesao"><small>Taxa de adesão:</small> <b>${p.adesao}</b></div>
           <div class="checks">${p.itens.map(i => `<span>${i}</span>`).join('')}</div>
           <button class="btn" onclick="contratar('${p.nome}')">CONTRATAR AGORA</button>
         </div>`).join('');
